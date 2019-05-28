@@ -51,7 +51,8 @@ app.post('/login', (req,res) => {
                 if (err) return res.status(400).send(err)
                 res.cookie('loginBedu',user.token).status(200).json({
                     loginSuccess:true,
-                    message: 'Correcto'+"<br/>usuario"+user.name+"Apellido"+user.lastname+"token"+user.token
+                    message: 'Correcto'+"<br/>usuario"+user.name+"Apellido"+user.lastname+"token",
+                    role: user.role
                 })
             })
         })
